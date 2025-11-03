@@ -73,3 +73,7 @@
   margin-top: auto;
   align-self: flex-start;
 }
+.footer-box .footer_blog .logo {
+    width: 150px;
+    height: auto;
+}
