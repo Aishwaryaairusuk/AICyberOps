@@ -85,110 +85,111 @@
     button:hover {
       background: #125c36;
     }
-    /* The thank you message is not needed since FormSubmit handles redirection, but we keep the structure */
+    .footer {
+      text-align: center;
+      font-size: 0.85rem;
+      margin-top: 25px;
+      color: #666;
+    }
     .thankyou {
-      display: none; 
-    } 
-  </style> 
+      display: none;
+      text-align: center;
+      padding: 50px;
+    }
+    .thankyou h2 {
+      color: #177245;
+    }
+    .pay-btn {
+      display: inline-block;
+      background: #177245;
+      color: white;
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+    .pay-btn:hover {
+      background: #125c36;
+    }
+  </style>
 </head>
+
 <body>
-  <div class="container" id="formContainer">
-    <h1>Cyber Essentials Certification Form</h1>
-    <p style="text-align:center;max-width:700px;margin:0 auto 30px;">
-      Complete the form below to begin your <strong>Cyber Essentials</strong> assessment.
-      Once you submit, you’ll be redirected to the secure payment page.
-    </p>
-    
-    <!-- CRITICAL FIX: The action attribute points to your FormSubmit email address -->
-    <form action="https://formsubmit.co/sanjana@vasavebusiness.com" method="POST">
-      
-      <!-- FormSubmit CONFIGURATION FIELDS -->
-      <!-- 1. Redirection: Redirects immediately to the payment page after successful submission -->
-      <input type="hidden" name="_next" value="https://iasme.co.uk/checkout/?add-to-cart=1183">
-      <!-- 2. Honeypot: A hidden field to catch bot submissions -->
-      <input type="text" name="_honey" style="display:none">
-      
-      <h2>Billing Details</h2>
+<div class="container" id="formContainer">
+  <h1>Cyber Essentials Certification Form</h1>
+  <p style="text-align:center;max-width:700px;margin:0 auto 30px;">
+    Complete the form below to begin your <strong>Cyber Essentials</strong> assessment.
+  </p>
 
-      <div class="grid">
-        <!-- FIX: type and name attributes are now correct and unique for each field -->
-        <div>
-          <label for="firstName">First Name *</label>
-          <input type="text" id="firstName" name="First_Name" required>
-        </div>
-        <div>
-          <label for="lastName">Last Name *</label>
-          <input type="text" id="lastName" name="Last_Name" required>
-        </div>
-        <div>
-          <label for="company">Company Name *</label>
-          <input type="text" id="company" name="Company_Name" required>
-        </div>
-        <div>
-          <label for="jobTitle">Job Title *</label>
-          <input type="text" id="jobTitle" name="Job_Title" required>
-        </div>
-        <div>
-          <label for="country">Country / Region *</label>
-          <select id="country" name="Country" required>
-            <option value="">Select Country</option>
-            <option value="India">India</option>
-            <option value="United Kingdom">United Kingdom</option>
-            <option value="United States">United States</option>
-          </select>
-        </div>
-        <div>
-          <label for="address">Street Address *</label>
-          <input type="text" id="address" name="Street_Address" required>
-        </div>
-        <div>
-          <label for="city">Town / City *</label>
-          <input type="text" id="city" name="City" required>
-        </div>
-        <div>
-          <label for="state">State / Province *</label>
-          <input type="text" id="state" name="State_Province">
-        </div>
-        <div>
-          <label for="pincode">PIN / ZIP Code *</label>
-          <input type="text" id="pincode" name="PIN_ZIP_Code" required>
-        </div>
-        <div>
-          <label for="phone">Mobile Number (for 2FA) *</label>
-          <input type="tel" id="phone" name="Mobile_Number" required>
-        </div>
-        <div>
-          <label for="email_address">Email Address *</label>
-          <!-- The Email field must have type="email" and a name attribute -->
-          <input type="email" id="email_address" name="Email_Address" required>
-        </div>
+  <form id="checkoutForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+
+    <h2>Billing Details</h2>
+    <div class="grid">
+      <div><label>First Name *</label><input type="text" name="firstName" required></div>
+      <div><label>Last Name *</label><input type="text" name="lastName" required></div>
+      <div><label>Company Name *</label><input type="text" name="company" required></div>
+      <div><label>Job Title *</label><input type="text" name="jobTitle" required></div>
+      <div>
+        <label>Country / Region *</label>
+        <select name="country" required>
+          <option value="">Select Country</option>
+          <option value="India">India</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="United States">United States</option>
+        </select>
       </div>
+      <div><label>Street Address *</label><input type="text" name="address" required></div>
+      <div><label>Town / City *</label><input type="text" name="city" required></div>
+      <div><label>State / Province *</label><input type="text" name="state"></div>
+      <div><label>PIN / ZIP Code *</label><input type="text" name="pincode" required></div>
+      <div><label>Mobile Number *</label><input type="tel" name="phone" required></div>
+      <div><label>Email Address *</label><input type="email" name="email" required></div>
+    </div>
 
-      <div class="terms-box">
-        <h3>Terms and Conditions (Please Read Carefully)</h3>
-        <p>By completing this form, you confirm that you are ready to proceed with the Cyber Essentials assessment payment.</p>
-        <ul>
-          <li>Your company details will be used for registration on the IASME certification portal.</li>
-          <li>You will have six months to complete the assessment after payment.</li>
-          <li>No refunds are available once payment is processed.</li>
-        </ul>
-      </div>
+    <div class="terms-box">
+      <h3>Terms and Conditions</h3>
+      <p>By completing this form, you confirm that you are ready to proceed with the Cyber Essentials assessment payment.</p>
+    </div>
 
-      <div class="terms">
-        <label>
-          <input type="checkbox" id="agreeTerms" name="Agreed_Terms" required>
-          I have read and agree to the above terms and conditions.
-        </label>
-      </div>
+    <div class="terms">
+      <label>
+        <input type="checkbox" required> I have read and agree to the above terms and conditions.
+      </label>
+    </div>
 
-      <button type="submit">Submit & Proceed to Payment</button>
-    </form>
-  </div>
+    <button type="submit">Submit & Proceed to Payment</button>
+  </form>
+</div>
 
-  <!-- The thank you section is now hidden, as FormSubmit handles the redirect -->
-  <div class="thankyou" id="thankYouMessage">
-    <h2>✅ Thank You!</h2>
-    <p>Your form has been submitted successfully. You will be redirected shortly.</p>
-  </div>
+<div class="thankyou" id="thankYouMessage">
+  <h2>✅ Thank You!</h2>
+  <p>Your form has been submitted successfully. </p>
+</div>
+
+<script>
+document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = e.target;
+
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(form)
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      form.style.display = "none";
+      document.getElementById('thankYouMessage').style.display = "block";
+    } else {
+      alert("Error: " + data.message);
+    }
+  })
+  .catch(err => alert("Error submitting form: " + err.message));
+});
+</script>
+
 </body>
 </html>
