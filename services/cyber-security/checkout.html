@@ -12,7 +12,6 @@
       padding: 0;
       color: #1c1c1c;
     }
-
     .container {
       max-width: 900px;
       margin: 40px auto;
@@ -21,29 +20,24 @@
       border-radius: 10px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
-
     h1 {
       text-align: center;
-      color: #1d5b3f;
+      color: #1d4e8d;
       margin-bottom: 20px;
     }
-
     h2 {
       color: #142c4c;
       border-bottom: 1px solid #ccc;
       padding-bottom: 5px;
     }
-
     form {
       display: flex;
       flex-direction: column;
       gap: 15px;
     }
-
     label {
       font-weight: 500;
     }
-
     input, select {
       padding: 10px;
       border: 1px solid #ccc;
@@ -52,13 +46,11 @@
       width: 100%;
       box-sizing: border-box;
     }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
     }
-
     .terms-box {
       background: #f0f4f8;
       padding: 20px;
@@ -68,20 +60,16 @@
       border: 1px solid #ccc;
       margin-top: 10px;
     }
-
     .terms-box h3 {
       margin-top: 0;
     }
-
     .terms {
       margin-top: 10px;
       font-size: 0.9rem;
     }
-
     .terms input {
       margin-right: 6px;
     }
-
     button {
       background: #177245;
       color: #fff;
@@ -94,44 +82,14 @@
       transition: 0.3s;
       margin-top: 10px;
     }
-
     button:hover {
       background: #125c36;
     }
-
-    .footer {
-      text-align: center;
-      font-size: 0.85rem;
-      margin-top: 25px;
-      color: #666;
-    }
-
+    /* The thank you message is not needed since FormSubmit handles redirection, but we keep the structure */
     .thankyou {
-      display: none;
-      text-align: center;
-      padding: 50px;
-    }
-
-    .thankyou h2 {
-      color: #177245;
-    }
-
-    .pay-btn {
-      display: inline-block;
-      background: #177245;
-      color: white;
-      text-decoration: none;
-      padding: 12px 30px;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: 0.3s;
-      margin-top: 20px;
-    }
-
-    .pay-btn:hover {
-      background: #125c36;
-    }
-  </style>
+      display: none; 
+    } 
+  </style> 
 </head>
 <body>
   <div class="container" id="formContainer">
@@ -140,30 +98,39 @@
       Complete the form below to begin your <strong>Cyber Essentials</strong> assessment.
       Once you submit, you’ll be redirected to the secure payment page.
     </p>
-
-    <form id="checkoutForm">
+    
+    <!-- CRITICAL FIX: The action attribute points to your FormSubmit email address -->
+    <form action="https://formsubmit.co/sanjana@vasavebusiness.com" method="POST">
+      
+      <!-- FormSubmit CONFIGURATION FIELDS -->
+      <!-- 1. Redirection: Redirects immediately to the payment page after successful submission -->
+      <input type="hidden" name="_next" value="https://iasme.co.uk/checkout/?add-to-cart=1183">
+      <!-- 2. Honeypot: A hidden field to catch bot submissions -->
+      <input type="text" name="_honey" style="display:none">
+      
       <h2>Billing Details</h2>
 
       <div class="grid">
+        <!-- FIX: type and name attributes are now correct and unique for each field -->
         <div>
           <label for="firstName">First Name *</label>
-          <input type="text" id="firstName" required>
+          <input type="text" id="firstName" name="First_Name" required>
         </div>
         <div>
           <label for="lastName">Last Name *</label>
-          <input type="text" id="lastName" required>
+          <input type="text" id="lastName" name="Last_Name" required>
         </div>
         <div>
           <label for="company">Company Name *</label>
-          <input type="text" id="company" required>
+          <input type="text" id="company" name="Company_Name" required>
         </div>
         <div>
           <label for="jobTitle">Job Title *</label>
-          <input type="text" id="jobTitle" required>
+          <input type="text" id="jobTitle" name="Job_Title" required>
         </div>
         <div>
           <label for="country">Country / Region *</label>
-          <select id="country" required>
+          <select id="country" name="Country" required>
             <option value="">Select Country</option>
             <option value="India">India</option>
             <option value="United Kingdom">United Kingdom</option>
@@ -172,27 +139,28 @@
         </div>
         <div>
           <label for="address">Street Address *</label>
-          <input type="text" id="address" required>
+          <input type="text" id="address" name="Street_Address" required>
         </div>
         <div>
           <label for="city">Town / City *</label>
-          <input type="text" id="city" required>
+          <input type="text" id="city" name="City" required>
         </div>
         <div>
           <label for="state">State / Province *</label>
-          <input type="text" id="state">
+          <input type="text" id="state" name="State_Province">
         </div>
         <div>
           <label for="pincode">PIN / ZIP Code *</label>
-          <input type="text" id="pincode" required>
+          <input type="text" id="pincode" name="PIN_ZIP_Code" required>
         </div>
         <div>
           <label for="phone">Mobile Number (for 2FA) *</label>
-          <input type="tel" id="phone" required>
+          <input type="tel" id="phone" name="Mobile_Number" required>
         </div>
         <div>
-          <label for="email">Email Address *</label>
-          <input type="email" id="email" required>
+          <label for="email_address">Email Address *</label>
+          <!-- The Email field must have type="email" and a name attribute -->
+          <input type="email" id="email_address" name="Email_Address" required>
         </div>
       </div>
 
@@ -208,7 +176,7 @@
 
       <div class="terms">
         <label>
-          <input type="checkbox" id="agreeTerms" required>
+          <input type="checkbox" id="agreeTerms" name="Agreed_Terms" required>
           I have read and agree to the above terms and conditions.
         </label>
       </div>
@@ -217,29 +185,10 @@
     </form>
   </div>
 
+  <!-- The thank you section is now hidden, as FormSubmit handles the redirect -->
   <div class="thankyou" id="thankYouMessage">
     <h2>✅ Thank You!</h2>
-    <p>Your form has been submitted successfully. Click below to continue to the secure payment page.</p>
-    <a href="https://iasme.co.uk/checkout/?add-to-cart=1183" class="pay-btn" target="_blank">
-      Proceed to Payment
-    </a>
+    <p>Your form has been submitted successfully. You will be redirected shortly.</p>
   </div>
-
-  <script>
-    const form = document.getElementById('checkoutForm');
-    const formContainer = document.getElementById('formContainer');
-    const thankYou = document.getElementById('thankYouMessage');
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      // Option 1 — Direct Redirect:
-      // window.location.href = "https://iasme.co.uk/checkout/?add-to-cart=1183";
-
-      // Option 2 — Show thank-you page with button:
-      formContainer.style.display = 'none';
-      thankYou.style.display = 'block';
-    });
-  </script>
 </body>
 </html>
