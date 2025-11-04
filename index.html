@@ -656,8 +656,15 @@ jQuery(function ($) {
             var ch = e.target.closest('.choose-contact');
 if (ch) {
   e.preventDefault();
-  var cert = ch.getAttribute('data-cert') || '';
-  window.location.href = './contact.html?cert=' + encodeURIComponent(cert);
+  var href = ch.getAttribute('href');
+  if (href && href !== '#') {
+    // If href points to a real page, follow it
+    window.location.href = href;
+  } else {
+    // fallback to contact page with cert param
+    var cert = ch.getAttribute('data-cert') || '';
+    window.location.href = './contact.html?cert=' + encodeURIComponent(cert);
+  }
 }
 
 }, true);
