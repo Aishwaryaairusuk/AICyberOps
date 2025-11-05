@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cyber Essentials Checkout | AI CyberOps</title>
+  <title>Cyber Assurance Level 1 Checkout | AI CyberOps</title>
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -55,13 +55,8 @@
       background: #f0f4f8;
       padding: 20px;
       border-radius: 6px;
-      max-height: 300px;
-      overflow-y: auto;
       border: 1px solid #ccc;
       margin-top: 10px;
-    }
-    .terms-box h3 {
-      margin-top: 0;
     }
     .terms {
       margin-top: 10px;
@@ -83,13 +78,7 @@
       margin-top: 10px;
     }
     button:hover {
-      background: #125c36;
-    }
-    .footer {
-      text-align: center;
-      font-size: 0.85rem;
-      margin-top: 25px;
-      color: #666;
+      background: #1d4e8d;
     }
     .thankyou {
       display: none;
@@ -113,6 +102,9 @@
     .pay-btn:hover {
       background: #125c36;
     }
+    .hidden {
+      display: none;
+    }
     h2.center {
   text-align: center;
 }
@@ -122,15 +114,16 @@
 
 <body>
 <div class="container" id="formContainer">
-  <h1>Cyber Essentials Certification Form</h1>
+  <h1>Cyber Assurance Level 1 Certification Form</h1>
   <p style="text-align:center;max-width:700px;margin:0 auto 30px;">
-    Complete the form below to begin your <strong>Cyber Essentials</strong> assessment.
+    If you are purchasing on behalf of your own company, please complete billing details below.  
+    If you are purchasing on behalf of another company, tick the box at the bottom to enter applicant details.
   </p>
 
   <form id="checkoutForm" action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="d34a16e3-b1b0-4514-af4b-1ec5e7e4e9e2">
 
-    <h2 class="center">Billing Details</h2>
+   <h2 class="center">Billing Details</h2>
     <div class="grid">
       <div><label>First Name *</label><input type="text" name="firstName" required></div>
       <div><label>Last Name *</label><input type="text" name="lastName" required></div>
@@ -147,15 +140,31 @@
       </div>
       <div><label>Street Address *</label><input type="text" name="address" required></div>
       <div><label>Town / City *</label><input type="text" name="city" required></div>
-      <div><label>State / Province *</label><input type="text" name="state"></div>
+      <div><label>State / Province</label><input type="text" name="state"></div>
       <div><label>PIN / ZIP Code *</label><input type="text" name="pincode" required></div>
-      <div><label>Mobile Number *</label><input type="tel" name="phone" required></div>
+      <div><label>Mobile Number (for 2FA) *</label><input type="tel" name="phone" required></div>
       <div><label>Email Address *</label><input type="email" name="email" required></div>
+    </div>
+
+    <div class="terms">
+      <label>
+        <input type="checkbox" id="otherCompanyCheckbox"> Purchasing on behalf of another company?
+      </label>
+    </div>
+
+    <div id="applicantDetails" class="hidden">
+      <h2>Applicant Company Details</h2>
+      <div class="grid">
+        <div><label>Applicant Company Name *</label><input type="text" name="appCompany"></div>
+        <div><label>Applicant Contact Name *</label><input type="text" name="appContact"></div>
+        <div><label>Applicant Email *</label><input type="email" name="appEmail"></div>
+        <div><label>Applicant Phone *</label><input type="tel" name="appPhone"></div>
+      </div>
     </div>
 
     <div class="terms-box">
       <h3>Terms and Conditions</h3>
-      <p>By completing this form, you confirm that you are ready to proceed with the Cyber Essentials assessment payment.</p>
+      <p>By completing this form, you confirm that you are ready to proceed with the Cyber Assurance Level 1 assessment payment.</p>
     </div>
 
     <div class="terms">
@@ -170,10 +179,15 @@
 
 <div class="thankyou" id="thankYouMessage">
   <h2>✅ Thank You!</h2>
-  <p>Your form has been submitted successfully. </p>
+  <p>Your form has been submitted successfully.</p>
+  
 </div>
 
 <script>
+document.getElementById('otherCompanyCheckbox').addEventListener('change', function() {
+  document.getElementById('applicantDetails').classList.toggle('hidden', !this.checked);
+});
+
 document.getElementById('checkoutForm').addEventListener('submit', function(e) {
   e.preventDefault();
   const form = e.target;
@@ -185,7 +199,7 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e) {
   .then(res => res.json())
   .then(data => {
     if (data.success) {
-      form.style.display = "none";
+      document.getElementById('formContainer').style.display = "none";
       document.getElementById('thankYouMessage').style.display = "block";
     } else {
       alert("Error: " + data.message);
@@ -197,5 +211,3 @@ document.getElementById('checkoutForm').addEventListener('submit', function(e) {
 
 </body>
 </html>
-
- 

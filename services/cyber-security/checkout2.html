@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Essentials Plus Quote | AI CyberOps</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f7fa;
+      margin: 0;
+      padding: 0;
+      color: #1c1c1c;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #1d4e8d;
+      margin-bottom: 10px;
+    }
+    p.intro {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #333;
+    }
+    h2 {
+      color: #142c4c;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    label {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 5px;
+    }
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    button {
+      background: #1d4e8d;
+      color: #fff;
+      padding: 14px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+    button:hover {
+      background: #1d4e8d;
+    }
+    .thankyou {
+      display: none;
+      text-align: center;
+      padding: 50px;
+    }
+    .thankyou h2 {
+      color: #177245;
+    }
+    .pay-btn {
+      display: inline-block;
+      background: #177245;
+      color: white;
+      text-decoration: none;
+      padding: 12px 30px;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+    .pay-btn:hover {
+      background: #125c36;
+    }
+    h2.center {
+  text-align: center;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="container" id="formContainer">
+    <h1>Get a Cyber Essentials Plus Quote</h1>
+    <p class="intro">
+      After filling out and submitting the form, you will be contacted by up to three different Certification Bodies.
+      Alternatively, you can find a Certification Body and contact them directly.
+    </p>
+
+    <form id="quoteForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="d34a16e3-b1b0-4514-af4b-1ec5e7e4e9e2">
+
+      <h2 class="center">About Your Organisation</h2>
+
+      <div class="grid">
+        <div>
+          <label>Company Name *</label>
+          <input type="text" name="companyName" required>
+        </div>
+        <div>
+          <label>Contact Name *</label>
+          <input type="text" name="contactName" required>
+        </div>
+        <div>
+          <label>Contact Email *</label>
+          <input type="email" name="contactEmail" required>
+        </div>
+        <div>
+          <label>Contact Phone *</label>
+          <input type="tel" name="contactPhone" required>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div>
+          <label>Street Address *</label>
+          <input type="text" name="streetAddress" required>
+        </div>
+        <div>
+          <label>City *</label>
+          <input type="text" name="city" required>
+        </div>
+        <div>
+          <label>ZIP / Postal Code *</label>
+          <input type="text" name="postalCode" required>
+        </div>
+        <div>
+          <label>Country *</label>
+          <select name="country" required>
+            <option value="">Select Country</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <option value="India">India</option>
+            <option value="United States">United States</option>
+          </select>
+        </div>
+      </div>
+
+      <div>
+        <label>Organisation Size *</label>
+        <select name="organisationSize" required>
+          <option value="">Select Size</option>
+          <option value="Micro (0-9 Employees)">Micro (0-9 Employees)</option>
+          <option value="Small (10-49 Employees)">Small (10-49 Employees)</option>
+          <option value="Medium (50-249 Employees)">Medium (50-249 Employees)</option>
+          <option value="Large (250+ Employees)">Large (250+ Employees)</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Do you already hold a basic Cyber Essentials Certification? *</label>
+        <select name="hasBasicCertification" required>
+          <option value="">Select Option</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+
+      <div>
+        <label>Reason for getting Cyber Essentials Plus</label>
+        <select name="reason">
+          <option value="">Please choose from drop down list</option>
+          <option value="Client Requirement">Client Requirement</option>
+          <option value="Government Contract">Government Contract</option>
+          <option value="Security Compliance">Security Compliance</option>
+          <option value="Renewal">Renewal</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <p style="font-size:0.9rem;color:#444;">
+        Cyber Essentials Plus involves both internal and external tests of your network and computers.
+        It includes a visit to your site and provides greater assurance of compliance with the Cyber Essentials Scheme.
+        You will need to complete your Cyber Essentials Plus audit within 3 months of your last basic certification.
+      </p>
+
+      <button type="submit">Submit Quote Request</button>
+    </form>
+  </div>
+
+  <div class="thankyou" id="thankYouMessage">
+    <h2>✅ Thank You!</h2>
+    <p>Your quote request has been submitted successfully. Our Certification Partners will contact you shortly.</p>
+  </div>
+
+  <script>
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    fetch(form.action, {
+      method: "POST",
+      body: new FormData(form)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.success) {
+        document.getElementById('formContainer').style.display = 'none';
+        document.getElementById('thankYouMessage').style.display = 'block';
+      } else {
+        alert("Error: " + data.message);
+      }
+    })
+    .catch(err => alert("Error submitting form: " + err.message));
+  });
+  </script>
+
+</body>
+</html>
