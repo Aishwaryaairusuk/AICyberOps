@@ -177,6 +177,7 @@
     
 <!-- Start Certification Sections -->
 <section class="cert-section">
+ <section class="cert-section">
     <div class="container grid">
       <div class="text">
         <h2>Cyber Essentials</h2>
@@ -189,10 +190,10 @@
           <li>Includes certification badge valid for 12 months</li>
         </ul>
 
-        <a href="/contact.html" class="btn btn-outline">Start Certification</a>
+        <a href="#" class="btn btn-outline" data-cert="cyber-essentials">Start Certification</a>
       </div>
-      <div class="image">
-        <img src="img/certifications/cyber-essentials_certification.jpg" alt="Cyber Essentials Badge" class="cyber-img"/>
+        <div class="image">
+        <img src="img/certifications/cyber_essentials.jpg" alt="Cyber Essentials Badge" class="cyber-img"/>
       </div>
     </div>
 </section>
@@ -214,7 +215,7 @@
           <li>Qualifies for advanced supply chain contracts</li>
         </ul>
 
-        <a href="/contact.html" class="btn btn-outline">Book an Assessment</a>
+        <a href="#" class="btn btn-outline" data-cert="cyber-essentials-plus">Book an Assessment</a>
       </div>
     </div>
 </section>
@@ -230,17 +231,67 @@
           <li>Includes data protection, risk, and access controls</li>
           <li>Assessor-verified self-assessment</li>
           <li>Aligns with GDPR and ISO principles</li>
-          <li>Scalable to IASME Level 2 (audited)</li>
+          <li>Scalable to IASME Level 2</li>
         </ul>
 
-        <a href="/contact.html" class="btn btn-outline">Apply Now</a>
+        <a href="#" class="btn btn-outline" data-cert="iasme">Apply Now</a>
       </div>
       <div class="image">
         <img src="img/certifications/IASME-CYBER-ASSURANCE.webp" alt="IASME Cyber Assurance Level 1 Badge" />
       </div>
     </div>
 </section>
+
+
+
+
 <!-- End Certification Sections -->
+ <!-- Certification modal (ensure this is placed just before </body>) -->
+<div id="certModal" aria-hidden="true" style="display:none;">
+  <div class="cert-overlay" tabindex="-1" style="position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9998;"></div>
+  <div class="cert-dialog" role="dialog" aria-modal="true" style="position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);width:90%;max-width:820px;background:#fff;border-radius:8px;z-index:9999;padding:20px;box-shadow:0 10px 40px rgba(0,0,0,.3);">
+    <button type="button" class="cert-close" aria-label="Close modal" style="float:right;background:none;border:none;font-size:22px;cursor:pointer;line-height:1;">✕</button>
+    <h3 style="margin-top:0;">Start Certification</h3>
+    <p>Select your certification and contact us to begin — we'll get back to you with next steps.</p>
+
+    <div class="cert-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px;">
+      <div class="cert-card" data-certkey="cyber-essentials" style="padding:14px;border:1px solid #eee;border-radius:6px;">
+        <h4 style="margin:0 0 8px 0;color:#003366;">Cyber Essentials</h4>
+        <p style="margin:0 0 12px 0;font-size:0.95rem;">Government-backed baseline cybersecurity for organisations of all sizes.</p>
+        <a class="choose-contact" data-cert="cyber-essentials" href="services/cyber-security/cyber-essential1.html" style="display:inline-block;padding:8px 12px;border:1px solid #003366;color:#003366;border-radius:4px;text-decoration:none;"> Apply / Contact </a>
+      </div>
+
+      <div class="cert-card" data-certkey="cyber-essentials-plus" style="padding:14px;border:1px solid #eee;border-radius:6px;">
+        <h4 style="margin:0 0 8px 0;color:#003366;">Cyber Essentials Plus</h4>
+        <p style="margin:0 0 12px 0;font-size:0.95rem;">Technical verification by certified assessors for higher assurance.</p>
+        <a class="choose-contact" data-cert="cyber-essentials-plus" href="services/cyber-security/cyber-essential-plus1.html" style="display:inline-block;padding:8px 12px;border:1px solid #003366;color:#003366;border-radius:4px;text-decoration:none;">Book Assessment</a>
+      </div>
+
+      <div class="cert-card" data-certkey="iasme" style="padding:14px;border:1px solid #eee;border-radius:6px;">
+        <h4 style="margin:0 0 8px 0;color:#003366;">IASME Cyber Assurance</h4>
+        <p style="margin:0 0 12px 0;font-size:0.95rem;">Governance and risk standard to demonstrate strong cyber practices.</p>
+        <a class="choose-contact" data-cert="iasme" href="services/cyber-security/Cyber-Assurance.html" style="display:inline-block;padding:8px 12px;border:1px solid #003366;color:#003366;border-radius:4px;text-decoration:none;"> Apply / Contact </a>
+      </div>
+    </div>
+    
+
+    <hr style="margin:16px 0;border:none;border-top:1px solid #eee;">
+    <p style="margin:0;font-size:0.95rem;">Or email us directly: <a href="mailto:info@aicyberops.uk">info@aicyberops.uk</a></p>
+  </div>
+</div>
+
+<style>
+  /* modal layout + ensure close is clickable above overlay */
+  #certModal { display: none; }
+  #certModal[aria-hidden="false"] { display: block; }
+  .cert-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 9998; }
+  .cert-dialog { position: fixed; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 9999; max-width: 820px; pointer-events: auto; }
+  .cert-dialog .cert-close { position: absolute; right: 12px; top: 12px; z-index: 10000; cursor: pointer; background: transparent; border: 0; font-size: 22px; }
+</style>
+
+
+	
+
 	
 
    <!-- Start Footer -->
@@ -453,6 +504,74 @@ jQuery(function ($) {
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
     </script>
+     <script>
+  (function () {
+    var modal = document.getElementById('certModal');
+    if (!modal) return;
+
+    function escHandler(e) { if (e.key === 'Escape') closeModal(); }
+
+    function openModal(certKey) {
+      modal.setAttribute('aria-hidden', 'false');
+      modal.style.display = 'block';
+      // highlight selection
+      modal.querySelectorAll('.cert-card.selected').forEach(function (el) { el.classList.remove('selected'); });
+      if (certKey) {
+        var sel = modal.querySelector('.cert-card[data-certkey="' + certKey + '"]');
+        if (sel) sel.classList.add('selected');
+      }
+      // focus close button for accessibility
+      var closeBtn = modal.querySelector('.cert-close');
+      if (closeBtn) closeBtn.focus();
+      document.addEventListener('keydown', escHandler);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.setAttribute('aria-hidden', 'true');
+      modal.style.display = 'none';
+      modal.querySelectorAll('.cert-card.selected').forEach(function (el) { el.classList.remove('selected'); });
+      document.removeEventListener('keydown', escHandler);
+      document.body.style.overflow = '';
+    }
+
+    // Delegated click handler: opens, closes, and handles internal actions.
+    document.addEventListener('click', function (e) {
+      // open: buttons with both classes/data attribute
+      var openBtn = e.target.closest('.btn-outline[data-cert]');
+      if (openBtn) {
+        e.preventDefault();
+        openModal(openBtn.getAttribute('data-cert'));
+        return;
+      }
+
+      // close: overlay or close button
+      if (e.target.closest('.cert-overlay') || e.target.closest('.cert-close')) {
+        e.preventDefault();
+        closeModal();
+        return;
+      }
+
+      // modal "Contact" actions
+      var ch = e.target.closest('.choose-contact');
+if (ch) {
+  e.preventDefault();
+  var href = ch.getAttribute('href');
+  if (href && href !== '#') {
+    // If href points to a real page, follow it
+    window.location.href = href;
+  } else {
+    // fallback to contact page with cert param
+    var cert = ch.getAttribute('data-cert') || '';
+    window.location.href = './contact.html?cert=' + encodeURIComponent(cert);
+  }
+}
+
+    
+
+}, true);
+  }());
+</script>
 </body>
 
 </html>
