@@ -73,34 +73,47 @@
       margin-top: 20px;
     }
     button:hover {
-      background: #1d4e8d;
+      background: #163d70;
     }
+
+    /* Thank You Section Styling */
     .thankyou {
       display: none;
       text-align: center;
-      padding: 50px;
+      padding: 80px 20px;
+      background: #fff;
+      max-width: 700px;
+      margin: 100px auto;
+      border-radius: 10px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
     }
     .thankyou h2 {
       color: #177245;
+      font-size: 2rem;
+      margin-bottom: 15px;
     }
-    .pay-btn {
+    .thankyou p {
+      color: #333;
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+    }
+    .home-btn {
       display: inline-block;
-      background: #177245;
-      color: white;
+      background: #1d4e8d;
+      color: #fff;
       text-decoration: none;
       padding: 12px 30px;
       border-radius: 25px;
       font-weight: bold;
       transition: 0.3s;
-      margin-top: 20px;
     }
-    .pay-btn:hover {
-      background: #125c36;
+    .home-btn:hover {
+      background: #163d70;
     }
-    h2.center {
-  text-align: center;
-}
 
+    h2.center {
+      text-align: center;
+    }
   </style>
 </head>
 
@@ -204,7 +217,9 @@
 
   <div class="thankyou" id="thankYouMessage">
     <h2>✅ Thank You!</h2>
-    <p>Your quote request has been submitted successfully. Our Certification Partners will contact you shortly.</p>
+    <p>Your quote request has been submitted successfully.<br>
+    Our Certification Partners will contact you shortly.</p>
+    <a href="../../index.html" class="home-btn">Back to Home</a>
   </div>
 
   <script>
