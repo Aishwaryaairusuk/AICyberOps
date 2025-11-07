@@ -77,3 +77,145 @@
     width: 150px;
     height: auto;
 }
+
+
+
+/* ========== ABOUT SECTION BASE ========== */
+.about-section {
+  padding: 80px 20px;
+  background: #f9fafc;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+
+.about-section h2 {
+  color: #0b132b;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.about-section p {
+  font-size: 17px;
+  color: #555;
+  line-height: 1.7;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 40px;
+}
+
+/* ========== FEATURES GRID ========== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 35px;
+  margin-top: 40px;
+}
+
+/* ========== FEATURE CARD BASE STYLE ========== */
+.feature {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* ========== HOVER EFFECT ========== */
+.feature::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(91,192,190,0.1), rgba(58,175,169,0.1));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.feature:hover::before {
+  opacity: 1;
+}
+
+.feature:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ========== TEXT & COLOR ANIMATION ========== */
+.feature h4 {
+  color: #1c2541;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.feature p,
+.feature ul {
+  color: #555;
+  font-size: 16px;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
+}
+
+.feature ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.feature ul li {
+  margin-bottom: 8px;
+}
+
+/* Change heading color slightly on hover */
+.feature:hover h4 {
+  color: #3aafa9;
+}
+
+/* ========== GLOW BORDER EFFECT (OPTIONAL) ========== */
+.feature::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: linear-gradient(120deg, #5bc0be, #3aafa9, #5bc0be);
+  background-size: 200% 200%;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease, background-position 0.8s ease;
+}
+
+.feature:hover::after {
+  opacity: 0.7;
+  background-position: right center;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 992px) {
+  .about-section {
+    padding: 60px 15px;
+  }
+
+  .about-section h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 768px) {
+  .feature {
+    padding: 25px 20px;
+  }
+
+  .feature h4 {
+    font-size: 18px;
+  }
+}
