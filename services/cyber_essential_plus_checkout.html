@@ -116,7 +116,6 @@
     }
   </style>
 </head>
-
 <body>
   <div class="container" id="formContainer">
     <h1>Get a Cyber Essentials Plus Quote</h1>
@@ -192,8 +191,7 @@
           <option value="No">No</option>
         </select>
       </div>
-
-      <div>
+<div>
         <label>Reason for getting Cyber Essentials Plus</label>
         <select name="reason">
           <option value="">Please choose from drop down list</option>
@@ -214,15 +212,13 @@
       <button type="submit">Submit Quote Request</button>
     </form>
   </div>
-
-  <div class="thankyou" id="thankYouMessage">
+ <div class="thankyou" id="thankYouMessage">
     <h2>✅ Thank You!</h2>
     <p>Your quote request has been submitted successfully.<br>
     Our Certification Partners will contact you shortly.</p>
     <a href="../../index.html" class="home-btn">Back to Home</a>
   </div>
-
-  <script>
+<script>
   document.getElementById('quoteForm').addEventListener('submit', function(e) {
     e.preventDefault();
     const form = e.target;
@@ -243,6 +239,5 @@
     .catch(err => alert("Error submitting form: " + err.message));
   });
   </script>
-
 </body>
 </html>
