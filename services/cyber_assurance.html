@@ -125,6 +125,66 @@
       margin-top: 40px;
       font-size: 0.9rem;
     }
+	   .content-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+footer.footer-box {
+  background: #142c4c;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.footer-box .footer_blog {
+  margin-bottom: 30px;
+}
+
+.footer-box h5 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-box ul li {
+  color: #dcdcdc;
+  margin-bottom: 8px;
+}
+
+.footer-box ul li a {
+  color: #dcdcdc;
+  text-decoration: none;
+}
+
+.footer-box ul li a:hover {
+  color: #fff;
+}
+
+/* Fix logo alignment */
+.footer-box .logo {
+  width: 160px;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+@media (max-width: 768px) {
+  .footer-box .logo {
+    width: 130px;
+  }
+}
+
 	
 
  
@@ -259,7 +319,8 @@
 
   <!-- Start Footer -->
     <footer class="footer-box">
-        <div class="container">
+       <div class="content-container">
+
             <div class="row">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
                     <div class="footer_blog">
