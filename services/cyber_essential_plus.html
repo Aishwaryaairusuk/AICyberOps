@@ -236,6 +236,54 @@
     margin: 0 10px;
   }
 }
+.footer-bottom {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 25px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+  text-transform: uppercase;
+  gap: 25px; /* Adds clean space between copyright and links */
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px; /* Equal space between each link */
+}
+
+.footer-links a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #1e468f;
+}
+
+/* Responsive: Center align everything on smaller screens */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
 
 
 
