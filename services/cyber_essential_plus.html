@@ -287,6 +287,64 @@
     gap: 8px;
   }
 }
+/* REPLACE your existing .footer_bottom block with this exact block */
+.footer_bottom {
+  border-top: 1px solid #e0e0e0;
+  margin-top: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex !important;
+  justify-content: center !important; /* center the whole row */
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  font-size: 14px;
+  text-transform: uppercase;
+  gap: 40px; /* space between copyright and links */
+}
+
+/* ensure the copyright text and links are separated */
+.footer_bottom .crp {
+  margin: 0;
+  font-weight: 500;
+  color: #000;
+  /* fallback spacing if gap isn't applied */
+  margin-right: 40px !important;
+}
+
+/* make the links a horizontal flex row with spacing */
+.footer_bottom .quick_links {
+  display: flex !important;
+  gap: 30px !important;
+  align-items: center;
+}
+
+/* link appearance */
+.footer_bottom .quick_links a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+.footer_bottom .quick_links a:hover {
+  color: #1e468f;
+}
+
+/* MOBILE: stack nicely */
+@media (max-width: 768px) {
+  .footer_bottom {
+    justify-content: center !important;
+    gap: 12px;
+  }
+
+  .footer_bottom .crp {
+    margin-right: 0 !important;
+  }
+
+  .footer_bottom .quick_links {
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+}
 
 
 
